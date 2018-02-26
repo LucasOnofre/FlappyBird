@@ -23,6 +23,7 @@ public class FlappyBird extends ApplicationAdapter {
     private Random      numeroRandomico;
 
     private Circle      passaroCirculo;
+
     private Rectangle   retanguloCanoTopo;
     private Rectangle   retanguloCanoBaixo;
 
@@ -141,10 +142,24 @@ public class FlappyBird extends ApplicationAdapter {
         batch.end();
 
         passaroCirculo.set(120 + passaros[0].getWidth() / 2, posicaoInicialVertical + passaros[0].getHeight() / 2, passaros[0].getWidth() / 2);
-        retanguloCanoBaixo = new Rectangle();
+
+        retanguloCanoBaixo = new Rectangle(
+                posicaoMovimentoCanoHorizontal,
+                    alturaDispositivo / 2 - canoBaixo.getHeight() - espacoEntreCanos / 2 + alturaEntreCanosRandomica,
+                    canoBaixo.getWidth(),
+                    canoBaixo.getHeight());
+
+        retanguloCanoTopo = new Rectangle(
+                posicaoMovimentoCanoHorizontal,
+                alturaDispositivo / 2 + espacoEntreCanos / 2 + alturaEntreCanosRandomica,
+                canoTopo.getWidth(),
+                canoTopo.getHeight());
+
         //Desenhar formas
         shape.begin( ShapeRenderer.ShapeType.Filled);
         shape.circle(passaroCirculo.x, passaroCirculo.y, passaroCirculo.radius);
+        shape.rect(retanguloCanoBaixo.x,retanguloCanoBaixo.y,retanguloCanoBaixo.width,retanguloCanoBaixo.height);
+        shape.rect(retanguloCanoTopo.x,retanguloCanoTopo.y,retanguloCanoTopo.width,retanguloCanoTopo.height);
         shape.setColor(Color.RED);
         shape.end();
     }
