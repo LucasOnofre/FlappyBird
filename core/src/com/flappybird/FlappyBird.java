@@ -22,10 +22,10 @@ public class FlappyBird extends ApplicationAdapter {
 
     private Boolean marcou = false;
 
-    private Texture fundo;
-    private Texture canoTop;
-    private Texture canoBaixo;
-    private Texture[] passaros;
+    private Texture     fundo;
+    private Texture     canoTop;
+    private Texture     canoBaixo;
+    private Texture[]   passaros;
 
     private int pontuacao = 0;
     private int estadoJogo = 0;
@@ -35,9 +35,9 @@ public class FlappyBird extends ApplicationAdapter {
     private float deltaTime;
     private float espacoCanos;
     private float variacao = 0;
-    private float alturaEntreCanosRandomica;
     private float velocidadeQueda = 0;
     private float posicaoInicialVertical;
+    private float alturaEntreCanosRandomica;
     private float posicaoMovimentoCanoHorizontal;
 
     private Random numeroRandomico;
@@ -97,12 +97,13 @@ public class FlappyBird extends ApplicationAdapter {
 
         //INICIALIZAÇÃO DA VARIAVEL PASSARO  QUE USA 3 IMAGENS PARA FAZER A IMPRESSÃO DE BATER DE ASAS
 
-        passaros = new Texture[3];
+        passaros    = new Texture[3];
         passaros[0] = new Texture("passaro1.png");
         passaros[1] = new Texture("passaro2.png");
         passaros[2] = new Texture("passaro3.png");
 
         espacoCanos = 250;
+
         posicaoMovimentoCanoHorizontal = larguraDispositivo - 100;
     }
 
@@ -135,9 +136,10 @@ public class FlappyBird extends ApplicationAdapter {
             variacao += deltaTime * 9;
 
             //FAZ O CANO REPETIR AO PASSAR NA TELA
+
             if (posicaoMovimentoCanoHorizontal < -canoTop.getWidth()) {
-                posicaoMovimentoCanoHorizontal = larguraDispositivo;
-                alturaEntreCanosRandomica = numeroRandomico.nextInt(550) - 200;
+                posicaoMovimentoCanoHorizontal  = larguraDispositivo;
+                alturaEntreCanosRandomica       = numeroRandomico.nextInt(550) - 200;
                 marcou = false;
 
             }
@@ -145,7 +147,6 @@ public class FlappyBird extends ApplicationAdapter {
             //CONDIÇÃO QUE FAZ O PASSARO CAIR, TIRANDO DA POSICAO INICIAL
 
             if (posicaoInicialVertical > 0 || velocidadeQueda < 0) {
-
                 posicaoInicialVertical -= velocidadeQueda;
             }
 
@@ -156,21 +157,17 @@ public class FlappyBird extends ApplicationAdapter {
                     pontuacao++;
                     marcou = true;
                 }
-
             }
-
 
             //CONDIÇÃO QUE PEGA QUANDO A TELA É TOCADA E DECRSCENTA  DA VELOCIDADE DE QUEDA
             //PARA QUE ELA DIMINUA E DE A IMPRESSÃO DE QUE O PASSARO SUBIU DE NOVO
 
             if (Gdx.input.justTouched()) {
-
                 velocidadeQueda = -17;
             }
 
             //COMEÇANDO A BIBLIOTECA E A ANIMAÇÃO
         }
-
 
         batch.begin();
 
@@ -188,9 +185,11 @@ public class FlappyBird extends ApplicationAdapter {
         batch.draw(passaros[(int) variacao], 120, posicaoInicialVertical);
 
         //DESENHANDO A FONTE
+
         fonte.draw(batch,String.valueOf(pontuacao),larguraDispositivo/2,alturaDispositivo -50);
 
         //Desenhando formas
+
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.end();
 
