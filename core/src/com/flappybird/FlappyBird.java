@@ -28,8 +28,8 @@ public class FlappyBird extends ApplicationAdapter {
      private Rectangle   retanguloCanoTopo;
      private Rectangle   retanguloCanoBaixo;
 
-    private BitmapFont      fonte;
-    private BitmapFont      mensagem;
+    private BitmapFont    fonte;
+    private BitmapFont    mensagem;
 
     //Atributos de configuracao
     private int     pontuacao = 0;
@@ -39,8 +39,8 @@ public class FlappyBird extends ApplicationAdapter {
     private float   variacao = 0;
     private float   espacoEntreCanos;
     private float   alturaDispositivo;
-    private float   velocidadeQueda = 0;
     private float   larguraDispositivo;
+    private float   velocidadeQueda = 0;
     private float   posicaoInicialVertical;
     private float   alturaEntreCanosRandomica;
     private float   posicaoMovimentoCanoHorizontal;
@@ -66,6 +66,7 @@ public class FlappyBird extends ApplicationAdapter {
 
         //INICIALIZANDO AS FORMAS
         numeroRandomico     = new Random();
+
         passaroCirculo      = new Circle();
         retanguloCanoTopo   = new Rectangle();
         retanguloCanoBaixo  = new Rectangle();
