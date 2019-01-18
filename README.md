@@ -1,14 +1,19 @@
 Flappy Bird 
 ===========
 
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![](https://media.giphy.com/media/dtiCACpv3YLgN368Ct/giphy.gif)
 
 
 ## App Propose
 
-Informations about what is used in NBA Stats: 
 
-- LIBDBX: biblioteca usada para tratar os visuais e os 
+Application developed for educational purposes on game development.
+
+
+
+## Used in the app 
+
+- libGDX: Game development framework
 
 - CardView: To display the players list.
 
