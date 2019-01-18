@@ -1,7 +1,7 @@
 Flappy Bird 
 ===========
 
-![](https://media.giphy.com/media/dtiCACpv3YLgN368Ct/giphy.gif)
+![](https://media.giphy.com/media/DQe6eRs0YM71TouCD4/giphy.gif)
 
 
 ## App Propose
